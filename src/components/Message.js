@@ -30,7 +30,6 @@ const MessageContainer = styled.div`
   align-items: center;
   padding: 5px;
   margin: 0 20px;
-
   justify-content: ${(props) =>
     props.LoggedInUser === props.MsgOwner ? "flex-end" : null};
 `;
