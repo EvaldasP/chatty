@@ -1,13 +1,8 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import firebase from "firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
-import SignOut from "../pages/SignOut";
+import SignOut from "../components/SignOut";
 
-const NavBar = () => {
-  const auth = firebase.auth();
-  const [user] = useAuthState(auth);
-
+const NavBar = ({ user, auth }) => {
   return (
     <>
       <Navbar style={{ backgroundColor: "#C490E4" }} variant="dark">
@@ -37,7 +32,7 @@ const NavBar = () => {
             ></img>{" "}
             {user.displayName}
           </h5>
-          <SignOut />
+          <SignOut auth={auth} />
         </Container>
       </Navbar>
     </>
