@@ -12,7 +12,7 @@ const ChatRoom = () => {
   const firestore = firebase.firestore();
   const [user] = useAuthState(auth);
   const messagesRef = firestore.collection("messages");
-  const query = messagesRef.orderBy("createdAt").limitToLast(14);
+  const query = messagesRef.orderBy("createdAt").limitToLast(25);
   const [messages] = useCollectionData(query, { idField: "id" });
 
   const dummy = useRef();
@@ -25,7 +25,7 @@ const ChatRoom = () => {
     <ChatRoomContainer>
       <NavBar auth={auth} user={user} />
       <MessagesContainer>
-        <div>
+        <Wrapper className="overflow-auto">
           {messages &&
             messages.map((msg) => {
               return (
@@ -37,7 +37,7 @@ const ChatRoom = () => {
               );
             })}
           <span ref={dummy}></span>
-        </div>
+        </Wrapper>
       </MessagesContainer>
       <MessageForm user={user} messagesRef={messagesRef}></MessageForm>
     </ChatRoomContainer>
@@ -59,5 +59,19 @@ const MessagesContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+`;
+
+const Wrapper = styled.div`
+  /* Track */
+  &::-webkit-scrollbar {
+    box-shadow: inset 0 0 5px grey;
+    width: 5px;
+    border-radius: 5px;
+  }
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #f38ba0;
+    border-radius: 5px;
+  }
 `;
 export default ChatRoom;

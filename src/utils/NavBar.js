@@ -5,7 +5,7 @@ import SignOut from "../components/SignOut";
 const NavBar = ({ user, auth }) => {
   return (
     <>
-      <Navbar style={{ backgroundColor: "#C490E4" }} variant="dark">
+      <Navbar style={{ backgroundColor: "#f38ba0" }} variant="dark">
         <Container>
           <Navbar.Brand href="#home">CHATTY</Navbar.Brand>
           <Nav className="me-auto">
