@@ -5,7 +5,7 @@ import SignOut from "../components/SignOut";
 const NavBar = ({ user, auth }) => {
   return (
     <>
-      <Navbar style={{ backgroundColor: "#f38ba0" }} variant="dark">
+      <Navbar style={{ backgroundColor: "#C1AC95" }} variant="dark">
         <Container>
           <Navbar.Brand href="#home">CHATTY</Navbar.Brand>
           <Nav className="me-auto">
@@ -15,23 +15,31 @@ const NavBar = ({ user, auth }) => {
         <Container
           style={{
             display: "flex",
-            alignItems: "center",
+            justifyContent: "flex-end",
           }}
         >
-          <h5 style={{ color: "white" }}>
-            Hello,{" "}
+          <h6
+            style={{
+              color: "white",
+              display: "flex",
+              alignItems: "center",
+              marginRight: 20,
+              marginBottom: 0,
+            }}
+          >
             <img
               style={{
                 verticalAlign: "middle",
                 width: 40,
                 height: 40,
                 borderRadius: "50%",
+                marginRight: 10,
               }}
               src={user.photoURL}
               alt="userphoto"
             ></img>{" "}
             {user.displayName}
-          </h5>
+          </h6>
           <SignOut auth={auth} />
         </Container>
       </Navbar>

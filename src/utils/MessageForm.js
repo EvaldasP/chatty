@@ -41,7 +41,7 @@ const MessageFormContainer = styled.div`
   background-color: white;
   width: 60%;
   margin: 0 auto;
-  background-color: #f38ba0;
+  background-color: #c1ac95;
 `;
 
 const Form = styled.form`
@@ -56,7 +56,7 @@ const MsgInput = styled.input`
   border: none;
   border-bottom: 2px solid #edf6e5;
   outline: none;
-  color: white;
+  color: #edf6e5;
   margin-left: 5px;
 `;
 const Button = styled.button`
@@ -65,7 +65,7 @@ const Button = styled.button`
   color: white;
   transition: 0.3s;
   :hover {
-    color: #66de93;
+    color: #b5cda3;
   }
 `;
 

@@ -12,7 +12,15 @@ const SignIn = () => {
   return (
     <SignInDiv className="sign-in">
       <LoginFormDiv>
-        <h1 style={{ marginBottom: 20 }}>Chatty</h1>
+        <h1
+          style={{
+            marginBottom: 20,
+            color: "white",
+            textDecoration: "underline",
+          }}
+        >
+          CHATTY
+        </h1>
         <Button onClick={signInWithGoogle}>
           <img
             alt="no"
@@ -36,11 +44,11 @@ const Button = styled.button`
   align-items: center;
   border: none;
   background-color: transparent;
-  border: 2px solid #ffbcbc;
+  border: 2px solid #b5cda3;
   border-radius: 10px;
   transition: ease 0.3s;
   :hover {
-    background-color: #ffbcbc;
+    background-color: #b5cda3;
   }
   color: white;
 `;
@@ -50,7 +58,7 @@ const SignInDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #b5eaea;
+  background-color: #faebe0;
 `;
 
 const LoginFormDiv = styled.div`

@@ -45,14 +45,14 @@ const ChatRoom = () => {
 };
 
 const ChatRoomContainer = styled.div`
-  background-color: #edf6e5;
+  background-color: #faebe0;
   min-height: 100vh;
 `;
 
 const MessagesContainer = styled.div`
   width: 60%;
   margin: 0 auto;
-  background-color: #ffbcbc;
+  background-color: #c9e4c5;
   height: 80vh;
   margin-top: 30px;
   padding: 20px;
@@ -70,7 +70,7 @@ const Wrapper = styled.div`
   }
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: #f38ba0;
+    background: #c1ac95;
     border-radius: 5px;
   }
 `;

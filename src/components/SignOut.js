@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { AiOutlineLogout } from "react-icons/ai";
 
 const SignOut = ({ auth }) => {
   return (
     auth.currentUser && (
-      <SingnOutButton onClick={() => auth.signOut()}>Sign Out</SingnOutButton>
+      <SingnOutButton onClick={() => auth.signOut()}>
+        <AiOutlineLogout size={30} />
+      </SingnOutButton>
     )
   );
 };
