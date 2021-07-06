@@ -28,7 +28,6 @@ const ChatRoom = () => {
         <Wrapper className="overflow-auto">
           {messages &&
             messages.map((msg) => {
-              console.log(msg.createdAt);
               return (
                 <Message
                   msg={msg.text}
@@ -56,7 +55,7 @@ const MessagesContainer = styled.div`
   margin: 0 auto;
   background-color: #c9e4c5;
   height: 80vh;
-  margin-top: 30px;
+  margin-top: 5px;
   padding: 20px;
   display: flex;
   flex-direction: column;

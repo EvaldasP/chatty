@@ -12,15 +12,20 @@ const SignIn = () => {
   return (
     <SignInDiv className="sign-in">
       <LoginFormDiv>
-        <h1
-          style={{
-            marginBottom: 20,
-            color: "white",
-            textDecoration: "underline",
-          }}
-        >
-          CHATTY
-        </h1>
+        <div style={{ width: "100%" }}>
+          <h1
+            style={{
+              marginBottom: 20,
+              color: "white",
+              textAlign: "center",
+            }}
+          >
+            CHATTY
+          </h1>
+          <Underline />
+          <Description>Simple Social Media App :)</Description>
+        </div>
+
         <Button onClick={signInWithGoogle}>
           <img
             alt="no"
@@ -72,4 +77,17 @@ const LoginFormDiv = styled.div`
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   background: rgba(93, 96, 90, 0.2);
   backdrop-filter: blur(1px);
+`;
+
+const Underline = styled.div`
+  background-color: white;
+  height: 1px;
+  width: 100%;
+`;
+
+const Description = styled.p`
+  color: white;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  text-align: center;
 `;
