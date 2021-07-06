@@ -22,16 +22,15 @@ const Message = ({ msgOwnerPhoto, msg, msgOwner, timeCreated }) => {
           width: 40,
           height: 40,
           borderRadius: "50%",
+          transform: "translatey(1px)",
         }}
         src={msgOwnerPhoto}
         alt="userphoto"
       ></img>
-      <MessageTextContainer
-        onClick={msgInfoToggler}
-        LoggedInUser={user.displayName}
-        MsgOwner={msgOwner}
-      >
-        <p style={{ marginBottom: 0 }}>{msg}</p>
+      <MessageTextContainer onClick={msgInfoToggler}>
+        <MessageStyle LoggedInUser={user.displayName} MsgOwner={msgOwner}>
+          {msg}
+        </MessageStyle>
         {isInfo && (
           <Info MsgOwner={msgOwner} LoggedInUser={user.displayName}>
             send by: {msgOwner} <br></br>
@@ -45,8 +44,7 @@ const Message = ({ msgOwnerPhoto, msg, msgOwner, timeCreated }) => {
 
 const MessageContainer = styled.div`
   display: flex;
-  align-items: center;
-
+  // align-items: center;
   padding: 5px;
   margin: 0 20px;
   justify-content: ${(props) =>
@@ -55,8 +53,13 @@ const MessageContainer = styled.div`
 
 const MessageTextContainer = styled.div`
   margin-left: 5px;
+`;
+
+const MessageStyle = styled.p`
   background-color: ${(props) =>
     props.LoggedInUser === props.MsgOwner ? "#B5EAEA" : "white"};
+  margin-bottom: 0;
+
   padding: 10px;
   border-radius: 10px;
 `;
