@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import firebase from "firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Moment from "react-moment";
+import moment from "moment";
 
-const Message = ({ msgOwnerPhoto, msg, msgOwner }) => {
+const Message = ({ msgOwnerPhoto, msg, msgOwner, timeCreated }) => {
   const auth = firebase.auth();
   const [user] = useAuthState(auth);
+  const [isInfo, setisInfo] = useState(false);
+
+  const msgInfoToggler = () => {
+    setisInfo(!isInfo);
+  };
+
   return (
     <MessageContainer LoggedInUser={user.displayName} MsgOwner={msgOwner}>
       <img
@@ -18,8 +26,18 @@ const Message = ({ msgOwnerPhoto, msg, msgOwner }) => {
         src={msgOwnerPhoto}
         alt="userphoto"
       ></img>
-      <MessageTextContainer LoggedInUser={user.displayName} MsgOwner={msgOwner}>
+      <MessageTextContainer
+        onClick={msgInfoToggler}
+        LoggedInUser={user.displayName}
+        MsgOwner={msgOwner}
+      >
         <p style={{ marginBottom: 0 }}>{msg}</p>
+        {isInfo && (
+          <Info MsgOwner={msgOwner} LoggedInUser={user.displayName}>
+            send by: {msgOwner} <br></br>
+            <Moment fromNow>{new Date(timeCreated.seconds * 1000)}</Moment>
+          </Info>
+        )}
       </MessageTextContainer>
     </MessageContainer>
   );
@@ -28,6 +46,7 @@ const Message = ({ msgOwnerPhoto, msg, msgOwner }) => {
 const MessageContainer = styled.div`
   display: flex;
   align-items: center;
+
   padding: 5px;
   margin: 0 20px;
   justify-content: ${(props) =>
@@ -40,6 +59,11 @@ const MessageTextContainer = styled.div`
     props.LoggedInUser === props.MsgOwner ? "#B5EAEA" : "white"};
   padding: 10px;
   border-radius: 10px;
+`;
+
+const Info = styled.p`
+  font-size: 0.8rem;
+  color: grey;
 `;
 
 export default Message;

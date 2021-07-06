@@ -28,11 +28,13 @@ const ChatRoom = () => {
         <Wrapper className="overflow-auto">
           {messages &&
             messages.map((msg) => {
+              console.log(msg.createdAt);
               return (
                 <Message
                   msg={msg.text}
                   msgOwnerPhoto={msg.ownerPhoto}
                   msgOwner={msg.owner}
+                  timeCreated={msg.createdAt}
                 />
               );
             })}
