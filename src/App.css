@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+a {
+  color: rgba(255, 255, 255, 0.55) !important;
+  text-decoration: none !important;
+  transition: ease-in 0.3s;
+}
+
+a:hover {
+  color: white !important;
+}

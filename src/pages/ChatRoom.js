@@ -9,8 +9,8 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 
 const ChatRoom = () => {
   const auth = firebase.auth();
-  const firestore = firebase.firestore();
   const [user] = useAuthState(auth);
+  const firestore = firebase.firestore();
   const messagesRef = firestore.collection("messages");
   const query = messagesRef.orderBy("createdAt").limitToLast(25);
   const [messages] = useCollectionData(query, { idField: "id" });

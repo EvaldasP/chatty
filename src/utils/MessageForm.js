@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import firebase from "firebase";
 import { AiOutlineSend } from "react-icons/ai";
+
 const MessageForm = ({ user, messagesRef }) => {
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
@@ -20,8 +21,6 @@ const MessageForm = ({ user, messagesRef }) => {
 
   const sendMsg = async (e) => {
     e.preventDefault();
-
-    validateMsg();
 
     if (!validateMsg()) {
       await messagesRef.add({
@@ -77,7 +76,7 @@ const Form = styled.form`
 `;
 
 const MsgInput = styled.input`
-  min-width: 50%;
+  min-width: 60%;
   background-color: transparent;
   border: none;
   border-bottom: 2px solid;
@@ -101,6 +100,7 @@ const ErrorMsg = styled.p`
   color: red;
   font-size: 0.7rem;
   margin-left: 5px;
+  margin-bottom: 0;
 `;
 
 export default MessageForm;

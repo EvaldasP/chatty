@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import SignOut from "../components/SignOut";
+import { Link } from "react-router-dom";
 
 const NavBar = ({ user, auth }) => {
   return (
@@ -9,7 +10,12 @@ const NavBar = ({ user, auth }) => {
         <Container>
           <Navbar.Brand href="#home">CHATTY</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">About</Nav.Link>
+            <Nav.Link>
+              <Link to="/chatroom">ChatRoom</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/posts">Posts</Link>
+            </Nav.Link>
           </Nav>
         </Container>
         <Container
