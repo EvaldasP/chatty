@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Moment from "react-moment";
+
 const Post = ({ owner, ownerPhoto, description, postURL, createdAt }) => {
   console.log(createdAt);
   const [isClicked, setIsClicked] = useState(false);
@@ -36,7 +37,11 @@ const Post = ({ owner, ownerPhoto, description, postURL, createdAt }) => {
   );
 };
 
-const PostWrapper = styled.div``;
+const PostWrapper = styled.div`
+  margin-bottom: 20px;
+  border-bottom: 1px solid white;
+  margin: 0 30px;
+`;
 
 const Image = styled.div`
   background: url(${(props) => props.imageURL}) no-repeat;

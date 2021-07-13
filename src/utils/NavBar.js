@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 const NavBar = ({ user, auth }) => {
   return (
     <>
-      <Navbar style={{ backgroundColor: "#C1AC95" }} variant="dark">
+      <Navbar
+        style={{ backgroundColor: "#C1AC95", width: "100%" }}
+        variant="dark"
+      >
         <Container>
           <Navbar.Brand href="#home">CHATTY</Navbar.Brand>
           <Nav className="me-auto">

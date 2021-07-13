@@ -6,13 +6,14 @@ import firebase from "../firebase/base";
 import styled from "styled-components";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import Post from "../components/Post";
+import { max } from "moment";
 
 const Posts = () => {
   const auth = firebase.auth();
   const [user] = useAuthState(auth);
   const firestore = firebase.firestore();
   const postsRef = firestore.collection("posts");
-  const query = postsRef.orderBy("createdAt");
+  const query = postsRef.orderBy("createdAt", "desc");
   const [posts] = useCollectionData(query, { idField: "id" });
 
   console.log(posts);
@@ -24,10 +25,10 @@ const Posts = () => {
   }, [posts]);
 
   return (
-    <>
+    <PostPageWrapper>
       <NavBar auth={auth} user={user} />
-      <PostPageWrapper className="overflow-auto">
-        <PostForm user={user} postsRef={postsRef} />
+      <PostForm user={user} postsRef={postsRef} />
+      <PostsContainer className="overflow-auto">
         {posts &&
           posts.map((post) => (
             <Post
@@ -39,9 +40,9 @@ const Posts = () => {
               postURL={post.postURL}
             />
           ))}
-        <span ref={dummy}></span>
-      </PostPageWrapper>
-    </>
+      </PostsContainer>
+      <span ref={dummy}></span>
+    </PostPageWrapper>
   );
 };
 
@@ -51,6 +52,22 @@ const PostPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* Track */
+`;
+
+const PostsContainer = styled.div`
+  margin-bottom: 20px;
+
+  &::-webkit-scrollbar {
+    box-shadow: inset 0 0 5px grey;
+    width: 5px;
+    border-radius: 5px;
+  }
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #c1ac95;
+    border-radius: 5px;
+  }
 `;
 
 export default Posts;
