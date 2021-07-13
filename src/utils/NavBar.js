@@ -43,7 +43,7 @@ const NavBar = ({ user, auth }) => {
               }}
               src={user.photoURL}
               alt="userphoto"
-            ></img>{" "}
+            ></img>
             {user.displayName}
           </h6>
           <SignOut auth={auth} />

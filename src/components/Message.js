@@ -3,7 +3,6 @@ import styled from "styled-components";
 import firebase from "firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Moment from "react-moment";
-import moment from "moment";
 
 const Message = ({ msgOwnerPhoto, msg, msgOwner, timeCreated }) => {
   const auth = firebase.auth();
