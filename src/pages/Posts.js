@@ -6,7 +6,6 @@ import firebase from "../firebase/base";
 import styled from "styled-components";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import Post from "../components/Post";
-import { max } from "moment";
 
 const Posts = () => {
   const auth = firebase.auth();
@@ -47,7 +46,7 @@ const Posts = () => {
 };
 
 const PostPageWrapper = styled.div`
-  background-color: #faebe0;
+  background-color: #1b262c;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -65,7 +64,7 @@ const PostsContainer = styled.div`
   }
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: #c1ac95;
+    background: #bbe1fa;
     border-radius: 5px;
   }
 `;

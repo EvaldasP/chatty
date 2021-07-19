@@ -7,11 +7,11 @@ const NavBar = ({ user, auth }) => {
   return (
     <>
       <Navbar
-        style={{ backgroundColor: "#C1AC95", width: "100%" }}
+        style={{ backgroundColor: "#3282B8", width: "100%" }}
         variant="dark"
       >
         <Container>
-          <Navbar.Brand href="#home">CHATTY</Navbar.Brand>
+          <Navbar.Brand>CHATTY</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link>
               <Link to="/chatroom">ChatRoom</Link>

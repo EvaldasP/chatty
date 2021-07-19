@@ -63,9 +63,9 @@ const PostFormWrapper = styled.div`
   margin: 50px 0;
   width: 500px;
   height: 200px;
-  background-color: rgb(193, 172, 149);
+  background-color: #0f4c75;
   border-radius: 10px;
-  border: 2px solid #c9e4c5;
+  border: 2px solid #bbe1fa;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.43);
 `;
 
@@ -81,18 +81,18 @@ const FileInput = styled.input`
   padding: 5px;
   margin-bottom: 10px;
 
-  background-color: #c9e4c5;
+  background-color: #bbe1fa;
   outline: none;
   border: none;
-  color: white;
+  color: black;
   border-radius: 10px;
 `;
 
 const Button = styled.button`
   background-color: transparent;
-  color: #c9e4c5;
+  color: #bbe1fa;
   border: none;
-  border: 1px solid #c9e4c5;
+  border: 1px solid #bbe1fa;
   border-radius: 15px;
   width: 80%;
   display: flex;
@@ -101,7 +101,7 @@ const Button = styled.button`
   transition: 0.4s;
 
   &:hover {
-    background-color: #c9e4c5;
+    background-color: #bbe1fa;
     color: white;
   }
 `;

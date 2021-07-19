@@ -57,7 +57,7 @@ const MessageTextContainer = styled.div`
 const MessageStyle = styled.p`
   font-size: 0.9rem;
   background-color: ${(props) =>
-    props.LoggedInUser === props.MsgOwner ? "#FAEBE0" : "white"};
+    props.LoggedInUser === props.MsgOwner ? "#BBE1FA" : "white"};
   margin-bottom: 0;
 
   padding: 10px;

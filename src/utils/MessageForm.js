@@ -55,7 +55,7 @@ const MessageForm = ({ user, messagesRef }) => {
           {isError ? <ErrorMsg>{error}</ErrorMsg> : null}
         </div>
         <Button type="submit">
-          Send ! <AiOutlineSend size={30} />
+          Send <AiOutlineSend size={30} />
         </Button>
       </Form>
     </MessageFormContainer>
@@ -66,11 +66,12 @@ const MessageFormContainer = styled.div`
   background-color: white;
   width: 60%;
   margin: 0 auto;
-  background-color: #c1ac95;
+  background-color: #3282b8;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.43);
 `;
 
 const Form = styled.form`
-  padding: 7px 0;
+  padding: 20px 0;
   display: flex;
   justify-content: space-between;
 `;
@@ -83,8 +84,11 @@ const MsgInput = styled.input`
   border-color: ${(props) =>
     props.isError && props.isValidated ? "red" : "#edf6e5"};
   outline: none;
-  color: #edf6e5;
+  color: black;
   margin-left: 5px;
+  ::placeholder {
+    color: white;
+  }
 `;
 const Button = styled.button`
   background-color: transparent;

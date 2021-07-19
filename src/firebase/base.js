@@ -3,12 +3,12 @@ import "firebase/firestore";
 import "firebase/auth";
 
 firebase.initializeApp({
-  apiKey: "AIzaSyDvT8pQCPUTPc9mJ2v9KhJTyrThuFP_BQQ",
-  authDomain: "chatty-6224c.firebaseapp.com",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
   projectId: "chatty-6224c",
-  storageBucket: "chatty-6224c.appspot.com",
-  messagingSenderId: "874277321319",
-  appId: "1:874277321319:web:8e26c88754a3881df5b2c2",
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_SENDER_ID,
+  appId: process.env.REACT_APP_APPID,
 });
 
 export default firebase;

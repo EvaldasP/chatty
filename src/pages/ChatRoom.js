@@ -46,20 +46,21 @@ const ChatRoom = () => {
 };
 
 const ChatRoomContainer = styled.div`
-  background-color: #faebe0;
+  background-color: #1b262c;
   min-height: 100vh;
 `;
 
 const MessagesContainer = styled.div`
   width: 60%;
   margin: 0 auto;
-  background-color: #c9e4c5;
+  background-color: #0f4c75;
   height: 80vh;
   margin-top: 5px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.43);
 `;
 
 const Wrapper = styled.div`
@@ -71,7 +72,7 @@ const Wrapper = styled.div`
   }
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: #c1ac95;
+    background: #bbe1fa;
     border-radius: 5px;
   }
 `;

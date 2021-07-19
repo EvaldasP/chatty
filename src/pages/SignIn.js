@@ -49,11 +49,11 @@ const Button = styled.button`
   align-items: center;
   border: none;
   background-color: transparent;
-  border: 2px solid #b5cda3;
+  border: 2px solid #3282b8;
   border-radius: 10px;
   transition: ease 0.3s;
   :hover {
-    background-color: #b5cda3;
+    background-color: #3282b8;
   }
   color: white;
 `;
@@ -63,7 +63,7 @@ const SignInDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #faebe0;
+  background-color: #1b262c;
 `;
 
 const LoginFormDiv = styled.div`

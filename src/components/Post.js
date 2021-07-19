@@ -32,7 +32,7 @@ const Post = ({ owner, ownerPhoto, description, postURL, createdAt }) => {
         ) : null}
       </Header>
       <Image imageURL={postURL} />
-      {description}
+      <Description>{description}</Description>
     </PostWrapper>
   );
 };
@@ -54,12 +54,19 @@ const Image = styled.div`
 const PostCreator = styled.div`
   display: flex;
   align-items: center;
+  color: white;
 `;
 const Header = styled.div`
   padding: 10px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: white;
+`;
+
+const Description = styled.p`
+  margin: 5px 0px;
+  color: white;
 `;
 
 export default Post;
