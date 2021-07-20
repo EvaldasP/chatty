@@ -9,27 +9,41 @@ const PostForm = ({ user }) => {
   const [postURL, setPostURL] = useState("");
   const firestore = firebase.firestore();
   const postsRef = firestore.collection("posts");
+  const [error, setError] = useState("");
+  const [isError, setIsError] = useState("false");
+  const [isValidated, setValidated] = useState(false);
 
   const fileHandler = async (e) => {
     const file = e.target.files[0];
-
     const storage = firebase.storage();
     const fileRef = storage.ref(`/posts/${file.name}`);
     await fileRef.put(file);
     setPostURL(await fileRef.getDownloadURL());
   };
 
+  const validatePost = () => {
+    if (description === "") {
+      setIsError(true);
+      setValidated(true);
+      setError("Description cannot be empty !");
+      return true;
+    } else return false;
+  };
+
   const postHandler = async (e) => {
     e.preventDefault();
-    await postsRef.add({
-      postOwner: user.displayName,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      description,
-      postURL,
-      ownerPhoto: user.photoURL,
-    });
-
-    setDescription("");
+    if (!validatePost()) {
+      await postsRef.add({
+        postOwner: user.displayName,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        description,
+        postURL,
+        ownerPhoto: user.photoURL,
+      });
+      setDescription("");
+      setIsError(false);
+      setValidated(false);
+    }
   };
 
   console.log(postURL);
@@ -48,6 +62,7 @@ const PostForm = ({ user }) => {
           type="text"
           value={description}
         />
+        {isError ? <ErrorMsg>{error}</ErrorMsg> : null}
         <Button type="submit">
           <BiCloudUpload size={40} /> Upload
         </Button>
@@ -79,13 +94,16 @@ const Form = styled.form`
 const FileInput = styled.input`
   width: 100%;
   padding: 5px;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
 
   background-color: #bbe1fa;
   outline: none;
   border: none;
   color: black;
   border-radius: 10px;
+  :first-child {
+    margin-bottom: 10px;
+  }
 `;
 
 const Button = styled.button`
@@ -99,11 +117,17 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   transition: 0.4s;
-
+  margin-top: 10px;
   &:hover {
     background-color: #bbe1fa;
     color: white;
   }
+`;
+const ErrorMsg = styled.p`
+  color: red;
+  font-size: 0.7rem;
+  margin-left: 5px;
+  margin-bottom: 0;
 `;
 
 export default PostForm;
