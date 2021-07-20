@@ -71,7 +71,7 @@ const MessageFormContainer = styled.div`
 `;
 
 const Form = styled.form`
-  padding: 20px 0;
+  padding: 20px 10px;
   display: flex;
   justify-content: space-between;
 `;

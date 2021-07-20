@@ -39,7 +39,7 @@ const Post = ({ owner, ownerPhoto, description, postURL, createdAt }) => {
 
 const PostWrapper = styled.div`
   margin-bottom: 20px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #bbe1fa;
   margin: 0 30px;
 `;
 
@@ -54,19 +54,19 @@ const Image = styled.div`
 const PostCreator = styled.div`
   display: flex;
   align-items: center;
-  color: white;
+  color: #bbe1fa;
 `;
 const Header = styled.div`
   padding: 10px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: white;
+  color: #bbe1fa;
 `;
 
 const Description = styled.p`
   margin: 5px 0px;
-  color: white;
+  color: #bbe1fa;
 `;
 
 export default Post;
