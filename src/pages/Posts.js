@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import NavBar from "../utils/NavBar";
 import PostForm from "../utils/PostForm";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -15,10 +15,9 @@ const Posts = () => {
   const query = postsRef.orderBy("createdAt", "desc");
   const [posts] = useCollectionData(query, { idField: "id" });
 
-  console.log(posts);
+  console.log(user.uid);
 
   const dummy = useRef();
-
   useEffect(() => {
     dummy.current.scrollIntoView({ behavior: "smooth" });
   }, [posts]);
@@ -37,6 +36,9 @@ const Posts = () => {
               ownerPhoto={post.ownerPhoto}
               description={post.description}
               postURL={post.postURL}
+              loggedInUser={user}
+              postOwnerId={post.postOwnerId}
+              id={post.id}
             />
           ))}
       </PostsContainer>

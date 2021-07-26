@@ -35,6 +35,7 @@ const PostForm = ({ user }) => {
     if (!validatePost()) {
       await postsRef.add({
         postOwner: user.displayName,
+        postOwnerId: user.uid,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         description,
         postURL,
