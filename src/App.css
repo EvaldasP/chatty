@@ -45,3 +45,8 @@ a {
 a:hover {
   color: white !important;
 }
+
+* {
+  overflow: hidden;
+  overflow-x: hidden;
+}

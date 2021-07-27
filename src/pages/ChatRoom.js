@@ -67,6 +67,9 @@ const MessagesContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.43);
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 const Wrapper = styled.div`

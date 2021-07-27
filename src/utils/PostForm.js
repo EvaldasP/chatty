@@ -77,7 +77,7 @@ const PostFormWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: 50px 0;
-  width: 500px;
+  width: 80%;
   height: 200px;
   background-color: #17181f;
   border-radius: 10px;

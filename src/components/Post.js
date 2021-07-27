@@ -78,8 +78,8 @@ const Image = styled.div`
   background: url(${(props) => props.imageURL}) no-repeat;
   background-position: center;
   background-size: cover;
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
 `;
 
 const PostCreator = styled.div`

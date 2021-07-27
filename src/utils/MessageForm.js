@@ -68,6 +68,9 @@ const MessageFormContainer = styled.div`
   margin: 0 auto;
   background-color: #17181b;
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.43);
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 const Form = styled.form`

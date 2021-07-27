@@ -46,6 +46,9 @@ const MessageContainer = styled.div`
   // align-items: center;
   padding: 5px;
   margin: 0 20px;
+  @media (max-width: 768px) {
+    margin: 0;
+  }
   justify-content: ${(props) =>
     props.LoggedInUser === props.MsgOwner ? "flex-end" : null};
 `;
