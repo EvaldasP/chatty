@@ -43,10 +43,11 @@ const ModalContainer = styled.div`
 `;
 const ModalContent = styled.div`
   text-align: center;
-  background-color: #1b262c;
+  background-color: #17181f;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #bbe1fa;
+  border: 1px solid #cb69c1;
+  border-radius: 20px;
   width: 60%; /* Could be more or less, depending on screen size */
 `;
 

@@ -48,7 +48,7 @@ const Posts = () => {
 };
 
 const PostPageWrapper = styled.div`
-  background-color: #1b262c;
+  background-color: #17181f;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -66,7 +66,7 @@ const PostsContainer = styled.div`
   }
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: #bbe1fa;
+    background: #cb69c1;
     border-radius: 5px;
   }
 `;

@@ -54,7 +54,7 @@ const PostForm = ({ user }) => {
       <Form onSubmit={postHandler}>
         <FileInput type="file" onChange={fileHandler} />
 
-        <label style={{ color: "white" }}>Description:</label>
+        <label style={{ color: "EEEDF0" }}>Description:</label>
         <FileInput
           onChange={(e) => {
             setDescription(e.target.value);
@@ -79,9 +79,9 @@ const PostFormWrapper = styled.div`
   margin: 50px 0;
   width: 500px;
   height: 200px;
-  background-color: #0f4c75;
+  background-color: #17181f;
   border-radius: 10px;
-  border: 2px solid #bbe1fa;
+  border: 2px solid #cb69c1;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.43);
 `;
 
@@ -97,10 +97,10 @@ const FileInput = styled.input`
   padding: 5px;
   // margin-bottom: 10px;
 
-  background-color: #bbe1fa;
+  background-color: #6c72cb;
   outline: none;
   border: none;
-  color: black;
+  color: #eeedf0;
   border-radius: 10px;
   :first-child {
     margin-bottom: 10px;
@@ -109,9 +109,9 @@ const FileInput = styled.input`
 
 const Button = styled.button`
   background-color: transparent;
-  color: #bbe1fa;
+  color: #6c72cb;
   border: none;
-  border: 1px solid #bbe1fa;
+  border: 1px solid #6c72cb;
   border-radius: 15px;
   width: 80%;
   display: flex;
@@ -120,7 +120,7 @@ const Button = styled.button`
   transition: 0.4s;
   margin-top: 10px;
   &:hover {
-    background-color: #bbe1fa;
+    background-color: #6c72cb;
     color: white;
   }
 `;

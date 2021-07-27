@@ -7,7 +7,12 @@ const NavBar = ({ user, auth }) => {
   return (
     <>
       <Navbar
-        style={{ backgroundColor: "#3282B8", width: "100%" }}
+        style={{
+          backgroundColor: "#17181F",
+          width: "100%",
+          borderBottom: "1px solid #cb69c1",
+          marginBottom: "20px",
+        }}
         variant="dark"
       >
         <Container>
@@ -29,7 +34,7 @@ const NavBar = ({ user, auth }) => {
         >
           <h6
             style={{
-              color: "white",
+              color: "#eeedf0",
               display: "flex",
               alignItems: "center",
               marginRight: 20,

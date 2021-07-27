@@ -63,10 +63,10 @@ const MessageForm = ({ user, messagesRef }) => {
 };
 
 const MessageFormContainer = styled.div`
-  background-color: white;
+  background-color: #eeedf0;
   width: 60%;
   margin: 0 auto;
-  background-color: #3282b8;
+  background-color: #17181b;
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.43);
 `;
 
@@ -84,19 +84,19 @@ const MsgInput = styled.input`
   border-color: ${(props) =>
     props.isError && props.isValidated ? "red" : "#edf6e5"};
   outline: none;
-  color: black;
+  color: #eeedf0;
   margin-left: 5px;
   ::placeholder {
-    color: white;
+    color: #eeedf0;
   }
 `;
 const Button = styled.button`
   background-color: transparent;
   border: none;
-  color: white;
+  color: #eeedf0;
   transition: 0.3s;
   :hover {
-    color: #b5cda3;
+    color: #cb69c1;
   }
 `;
 

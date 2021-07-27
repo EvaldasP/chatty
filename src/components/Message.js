@@ -52,12 +52,13 @@ const MessageContainer = styled.div`
 
 const MessageTextContainer = styled.div`
   margin-left: 5px;
+  color: #eeedf0;
 `;
 
 const MessageStyle = styled.p`
   font-size: 0.9rem;
   background-color: ${(props) =>
-    props.LoggedInUser === props.MsgOwner ? "#BBE1FA" : "white"};
+    props.LoggedInUser === props.MsgOwner ? "#6c72cb" : "#cb69c1"};
   margin-bottom: 0;
 
   padding: 10px;
@@ -66,7 +67,7 @@ const MessageStyle = styled.p`
 
 const Info = styled.p`
   font-size: 0.7rem;
-  color: grey;
+  color: #17181f;
 `;
 
 export default Message;

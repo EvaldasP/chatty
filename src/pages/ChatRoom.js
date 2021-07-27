@@ -46,14 +46,20 @@ const ChatRoom = () => {
 };
 
 const ChatRoomContainer = styled.div`
-  background-color: #1b262c;
+  background-color: #17181f;
   min-height: 100vh;
 `;
 
 const MessagesContainer = styled.div`
   width: 60%;
   margin: 0 auto;
-  background-color: #0f4c75;
+  background: rgb(108, 114, 203);
+  background: rgb(108, 114, 203);
+  background: linear-gradient(
+    90deg,
+    rgba(108, 114, 203, 1) 0%,
+    rgba(203, 105, 193, 1) 100%
+  );
   height: 80vh;
   margin-top: 5px;
   padding: 20px;
