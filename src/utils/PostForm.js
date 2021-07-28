@@ -77,12 +77,15 @@ const PostFormWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: 50px 0;
-  width: 80%;
+  width: 60%;
   height: 200px;
   background-color: #17181f;
   border-radius: 10px;
   border: 2px solid #cb69c1;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.43);
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 `;
 
 const Form = styled.form`

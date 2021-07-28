@@ -1,7 +1,8 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import SignOut from "../components/SignOut";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const NavBar = ({ user, auth }) => {
   return (
@@ -24,6 +25,14 @@ const NavBar = ({ user, auth }) => {
             <Nav.Link>
               <Link to="/posts">Posts</Link>
             </Nav.Link>
+            <NavDropdown bg="dark" title="Pages" id="collasible-nav-dropdown">
+              <NavDropdown.Item>
+                <Link to="/posts">Posts</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to="/chatroom">ChatRoom</Link>
+              </NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Container>
         <Container

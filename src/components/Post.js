@@ -72,6 +72,7 @@ const PostWrapper = styled.div`
   border: 2px solid #cb69c1;
   border-radius: 15px;
   margin: 0 30px;
+  margin-bottom: 20px;
 `;
 
 const Image = styled.div`

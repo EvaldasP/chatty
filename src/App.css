@@ -46,6 +46,34 @@ a:hover {
   color: white !important;
 }
 
-* {
+#root {
   overflow-x: hidden;
+  overflow-y: auto;
+}
+#collasible-nav-dropdown {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .nav-link {
+    display: none !important;
+  }
+  #collasible-nav-dropdown {
+    display: block !important;
+  }
+  .navbar-brand {
+    margin-right: 0 !important;
+  }
+}
+
+.dropdown-menu {
+  background-color: #17181f !important;
+}
+
+.dropdown-item {
+  border-bottom: solid 1px #cb69c1 !important;
+}
+
+.dropdown-item:hover {
+  background-color: #cb69c1 !important;
 }
